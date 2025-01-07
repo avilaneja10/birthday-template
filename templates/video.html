@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Wedding &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+    <meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="static/css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="static/css/style.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/video.css') }}">
+
+	<!-- Modernizr JS -->
+	<script src="static/js/modernizr-2.6.2.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="fh5co-loader"></div>
+
+
+        <nav class="fh5co-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="{{ url_for('index') }}">Birthday Bash<strong>.</strong></a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <li><a href="{{ url_for('index') }}">Home</a></li>
+                            <li><a href="{{ url_for('chat') }}">Chat</a></li>
+                            <li class="active"><a href="{{ url_for('video') }}">Video</a></li>
+                            <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Video Player Section -->
+        <div class="video-container">
+            <video id="video" disableRemotePlayback src="static/wishes/wish2.mp4"></video>
+            <div class="player-state">
+                <span class="state-btn state-backward">
+                    <ion-icon name="play-back-outline" size="large"></ion-icon>
+                    <span class="backward-duration">5</span>
+                </span>
+                <span class="main-state state-btn">
+                    <ion-icon name="play-outline" size="large"></ion-icon>
+                </span>
+                <span class="custom-loader"></span>
+                <span class="state-btn state-forward">
+                    <span class="forward-duration">5</span>
+                    <ion-icon name="play-forward-outline" size="large"></ion-icon>
+                </span>
+            </div>
+            <div class="controls">
+                <div class="duration">
+                    <div class="current-time"></div>
+                    <div class="hover-time">
+                        <span class="hover-duration"></span>
+                    </div>
+                    <div class="buffer"></div>
+                </div>
+                <div class="btn-controls">
+                    <div class="btn-con">
+                        <span class="play-pause control-btn">
+                            <ion-icon name="play-outline" size="large"></ion-icon>
+                        </span>
+                        <span class="volume">
+                            <span class="mute-unmute control-btn">
+                                <ion-icon name="volume-high-outline" size="large"></ion-icon>
+                            </span>
+                            <div class="max-vol">
+                                <div class="current-vol"></div>
+                            </div>
+                        </span>
+                        <span class="time-container">
+                            <span class="current-duration">0:00</span>
+                            <span>/</span>
+                            <span class="total-duration">0:00</span>
+                        </span>
+                    </div>
+                    <div class="right-controls">
+                        <span class="backward control-btn" title="5 backward">
+                            <ion-icon name="play-back-outline" ></ion-icon>
+                        </span>
+                        <span class="forward control-btn" title="5 forward">
+                            <ion-icon name="play-forward-outline"></ion-icon>
+                        </span>
+                        <span class="mini-player control-btn">
+                            <ion-icon name="albums-outline"></ion-icon>
+                        </span>
+                        <span class="settings control-btn">
+                            <span class="setting-btn">
+                                <ion-icon name="options-outline"></ion-icon>
+                            </span>
+                            <ul class="setting-menu">
+                                <li data-value="0.25">0.25x</li>
+                                <li data-value="0.5">0.5x</li>
+                                <li data-value="0.75">0.75x</li>
+                                <li data-value="1" class="speed-active">1x</li>
+                                <li data-value="1.25">1.25x</li>
+                                <li data-value="1.5">1.5x</li>
+                                <li data-value="1.75">1.75x</li>
+                                <li data-value="2">2x</li>
+                            </ul>
+                        </span>
+                        <span class="theater-btn control-btn">
+                            <span class="theater-default">
+                                <ion-icon name="tablet-landscape-outline"></ion-icon>
+                            </span>
+                            <span class="theater-active">
+                                <ion-icon name="tv-outline"></ion-icon>
+                            </span>
+                        </span>
+                        <span class="fullscreen-btn control-btn" title="fullscreen">
+                            <span class="full">
+                                <ion-icon name="scan-outline"></ion-icon>
+                            </span>
+                            <span class="contract">
+                                <ion-icon name="contract-outline"></ion-icon>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <!-- <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"></header> -->
+
+    <script src="static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="static/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="static/js/jquery.countTo.js"></script>
+
+	<!-- Stellar -->
+	<script src="static/js/jquery.stellar.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="static/js/jquery.magnific-popup.min.js"></script>
+	<script src="static/js/magnific-popup-options.js"></script>
+
+	<!-- Main -->
+    <script src="static/js/video.js"></script>
+	<script src="static/js/main.js"></script>
+</body>

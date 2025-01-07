@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Wedding &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="static/css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="static/css/style.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+
+	<!-- Modernizr JS -->
+	<script src="static/js/modernizr-2.6.2.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+
+	<!-- <body style="background-color:black;"> -->
+	<body>
+	<div class="background-container">
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+	<nav class="fh5co-nav" role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="fh5co-logo"><a href="{{ url_for('index') }}">Birthday Bash<strong>.</strong></a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
+						<li><a href="{{ url_for('index') }}">Home</a></li>
+						<li class="active"><a href="{{ url_for('chat') }}">Chat</a></li>
+						<li><a href="{{ url_for('video') }}">Video</a></li>
+						<li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+	<!-- <div class="background"></div> -->
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" ></header>
+	
+
+	<div class="container_chat">
+		<!-- Mobile container aligned left -->
+		<div class="mobile">
+		<!-- Profile Section -->
+		<div class="profile">
+			<div class="pdetail">
+			<h3>Birthday Assistant</h3>
+			<p>Hi Palak! I am your birthday assistant and i will guide you through your surprises. This is my body beneath, please type here and dive in the wonderland.</p>
+			</div>
+		</div>
+
+		<!-- Chatbox -->
+		<div class="chatbox">
+			<!-- Dynamic Messages -->
+			<div class="messages" id="messages">
+			<!-- Example Bot Message -->
+			<div class="message bot-message">
+				<div class="message-bubble">Start the conversation by saying SHOW MY SURPRISES.
+				</div>
+			</div>
+			</div>
+		</div>
+
+		<!-- Input Section -->
+		<div class="sendbox">
+			<input id="user-input" type="text" placeholder="Type your message here...">
+			<button id="send-button">Send</button>
+		</div>
+		</div>
+
+		<!-- Right-side element -->
+		<div class="file-response">
+		<div class="gif-container">
+			<img src="static/images/birthday-happy-birthday-ezgif.com-crop.gif" alt="Birthday placeholder gif">
+		</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	</div>
+	<!-- jQuery -->
+	<script src="static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="static/js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="static/js/jquery.countTo.js"></script>
+
+	<!-- Stellar -->
+	<script src="static/js/jquery.stellar.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="static/js/jquery.magnific-popup.min.js"></script>
+	<script src="static/js/magnific-popup-options.js"></script>
+
+	<!-- Main -->
+	<script src="static/js/main.js"></script>
+	<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+	</body>
+</html>
+

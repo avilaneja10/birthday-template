@@ -1,0 +1,801 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
+
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: contain; /* Ensures the whole image fits without being cut */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+  }
+  
+  /* Purple patch background reduced */
+  .background-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-image: url('../images/pexels-pixabay-157879.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the whole image fits without being cut */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    opacity: 1; /* Adjust this value to set the transparency level */
+    z-index: 1; /* Keep the background behind the content */
+  }
+  
+  /* Mobile container aligned left and resized */
+  .mobile {
+    width: 30%; /* 40% of the container width */
+    height: 80vh; /* Match container height */
+    /* background: #fff; */
+    border-radius: 2rem;
+    box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, #fbebda, #d7a62d); /* Gradient from white to light gray */
+    background-size: cover; /* Ensures the gradient fills the entire div */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-position: center; /* Centers the gradient */
+    opacity: 1; /* Keeps the gradient fully opaque */
+    z-index: 1; /* Keep the background behind the content */
+  }
+  
+  /* Profile section styling */
+  .profile {
+    padding: 1rem;
+  }
+  
+  .profile .pdetail h3 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0.1rem;
+  }
+  
+  .container_chat {
+    display: flex;
+    flex-direction: row; /* Ensure horizontal alignment */
+    width: 90%; /* Full page width */
+    height: 90%;
+    margin: 2rem auto;
+    gap: 2rem; /* Space between mobile and file-response */
+  }
+
+  .profile .pdetail p {
+    font-size: 1.5rem;
+    color: gray;
+    padding-top: 1rem;
+  }
+  
+  /* Chatbox styles */
+  .chatbox {
+    height: calc(90% - 7rem);
+    overflow-y: auto;
+    margin: 0.6rem 0;
+    padding: 1rem;
+    background: #f6d9ad;
+    border-radius: 1rem;
+  }
+  
+  /* Message styles */
+  .message {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  
+  .message-bubble {
+    max-width: 70%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  
+  /* Bot message styling (aligned left) */
+  .bot-message {
+    justify-content: flex-start;
+  }
+  
+  .bot-message .message-bubble {
+    background-color: #e0e0e0;
+    color: #000;
+    border-bottom-left-radius: 0;
+    margin-top: 10px;
+  }
+  
+  /* User message styling (aligned right) */
+  .user-message {
+    justify-content: flex-end;
+  }
+  
+  .user-message .message-bubble {
+    background-color: #6c63ff;
+    color: #fff;
+    border-bottom-right-radius: 0;
+  }
+  
+  /* Input box styles */
+  .sendbox {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .sendbox input {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+  }
+  
+  .sendbox input::placeholder {
+    font-size: 1.2rem;
+    color: #aaa;
+  }
+  
+  .sendbox button {
+    padding: 0.8rem 1.5rem;
+    background: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  /* File Response (right-side) */
+  .file-response {
+    width: 60%; /* Remaining 60% of the width */
+    height: 80vh; /* Match container height */
+    /* background: #f6d9ad; */
+    border-radius: 2rem;
+    box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* background-image: url('../images/flat-lay-elegant-birthday-candles-frame.jpg'); */
+    background-image: url('../images/flat-lay-elegant-birthday-candles-frame.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; 
+    opacity: 1; 
+    z-index: 1; 
+  }
+  
+  
+  /* File Response Heading */
+  .file-response h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  /* GIF container */
+  .gif-container img {
+    width: 90%;
+    height: auto;
+    border-radius: 1rem;
+    /* box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background: #f6d9ad;
+    border-radius: 10px;
+  }
+  
+  .input-container {
+    display: flex;
+    padding: 1rem;
+    background: #ffffff;
+  }
+  
+  #user-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #send-button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+
+
+  /* Text File Preview */
+.text-preview {
+    width: 90%;
+    height: 50vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  /* Video File Preview */
+  .video-preview {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Audio File Preview */
+  .audio-preview {
+    width: 90%;
+    margin-top: 20px;
+  }
+  
+  /* Image File Preview */
+  .image-preview {
+    max-width: 90%;
+    max-height: 50vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+
+/* Defining the theme for the card: colors, fonts, spacing. 
+This uses CSS variables - so you only have to change the colors in one place */ 
+:root {
+  /* The color for your card background and background pattern */ 
+  --background: #F3F0D7;
+  --background-decor: #DBD0C0;
+  
+
+  /* Colors for the elements on your card */ 
+  --banner-bg: #1C0C5B;
+  --banner-txt: white;
+
+  /* Message area colors */ 
+  --message-bg: #F1EDE9;
+  --message-line: #94ACD4;
+  --message-txt: #333333;
+
+  /* Fonts */ 
+  --font-banner: 'Abril Fatface', cursive;
+  --font-text: 'Shadows Into Light', cursive;
+
+  /* Space and other details */
+  --space: 16px;
+  --space-xsm: 4px;
+  --space-sm: 8px;
+  --space-lg: 15px;
+  --space-xlg: 48px;
+}
+
+/* Base template configurations */ 
+body {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+
+  /* background color - here we are using the variable we created earlier! */ 
+  background-color: var(--background);
+
+  /* background pattern - remove the lines below and paste the new code if you want to use a different style */ 
+  /* background-image: radial-gradient(var(--background-decor) 20%, transparent 0), radial-gradient(var(--background-decor) 20%, transparent 0); */
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+
+}
+
+.background-text{
+  width: 100%; /* Full width of the parent */
+  height: 100%; /* Full height of the parent */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+
+  margin: 0;
+  padding : 0;
+  background-image: url("../images/IMG_6069.JPG");
+  background-size: contain;
+  background-repeat: repeat; /* Prevents the image from repeating */
+  opacity: 1; /* Adjust this value to set the transparency level */
+  z-index: 1; /* Keep the background behind the content */
+
+}
+
+.bday-card {
+  max-width: 420px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.bday-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 240px;
+  padding: var(--space-sm) var(--space-sm) var(--space-xlg);
+  background: white;
+  border-radius: 4px;
+  box-shadow: var(--space-xsm) var(--space-xsm) 15px rgba(0,0,0, .15);
+
+  /* Edit the Translate property below to adjust the position of your picture */ 
+  transform: rotate(5deg) translate(20px, 45px);
+}
+
+.bday-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bday-decor--container {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.bday-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  font-size: 42px;
+  z-index: 1;
+
+  /* Play around with those properties to change your banner styling */ 
+  color: var(--banner-txt);
+  font-family: var(--font-banner);
+  text-transform: uppercase;
+  transform: rotate(-5deg);
+  gap: var(--space-sm) 0;
+}
+
+.bday-banner span {
+  background: var(--banner-bg);
+  padding: var(--space) var(--space-lg);
+  flex-grow: 0;
+}
+
+.bday-banner span:nth-child(2) {
+  margin-left: var(--space-lg);
+}
+
+
+.bday-message {
+  max-width: 100%;
+  padding: 35px var(--space);
+  font-family: var(--font-text);
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--message-txt);
+  background-color: var(--message-bg);
+}
+
+/* Paper */
+.bday-message--paper {
+  background: repeating-linear-gradient(var(--message-bg), var(--message-bg) 31px, var(--message-line) 31px, var(--message-line) 32px);
+  box-shadow: var(--space-xsm) var(--space-xsm) 15px rgba(0,0,0, .15);
+}
+/* End - Paper */
+
+/* Block right */
+.bday-message--block-right {
+  position: relative;
+}
+
+.bday-message--block-right::before {
+  content: "";
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--paper);
+  z-index: -1;
+}
+/* End - Block right */
+
+/* Block left */
+.bday-message--block-left {
+  position: relative;
+}
+
+.bday-message--block-left::before {
+  content: "";
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--paper);
+  z-index: -1;
+}
+/* End - Block left */
+
+
+.bday-decor {
+  /* Emojis are text - so here we are setting a font-size to make them bigger */ 
+  font-size: 96px;
+}
+
+/* Positioning for the emojis - play around with the values to change the placement of your decorations */ 
+.bday-decor--top-right { 
+  position: absolute;
+  bottom: -70px;
+  right: -20px;
+}
+
+.bday-decor--top-left {
+  position: absolute;
+  bottom: 0px;
+  left: -25px;
+}
+
+.bday-decor--bottom-right {
+  position: absolute; 
+  right: 20px;
+}
+
+/* Animations */ 
+
+/* Here we designate an specific animation to an specific element using a class. We have a defined name, time and iteration-count for each animation. We can also define the origin point from which the animation will happen - the default is the center. */  
+.zoom-left-in-out {
+  animation-name: zoom-left-in-out;
+  animation-duration: 1.75s;
+  animation-iteration-count: infinite;
+  transform-origin: left bottom;
+}
+
+/* Here we specify what will change on the element when they animate */ 
+@keyframes zoom-left-in-out {
+  /* Animation will start and end with the same settings */ 
+  0%, 100% {
+    transform: scale(0.95) rotate(2deg);
+  }
+
+  /* Animation will reach those settings 50% into the duration time we set on the declaration */
+  50% {
+    transform: scale(1) rotate(-2deg);
+  }
+}
+
+/* pulse */ 
+.pulse {
+  animation-name: pulse;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+/* pulse - End */
+
+/* float */ 
+.float {
+  animation-name: float;
+  animation-duration: 1.9s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+/* float - End */
+
+/* spin */ 
+.spin {
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Container for the video and title */
+.video-container {
+  width: 100%; /* Full width of the parent */
+  height: 100%; /* Full height of the parent */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+
+  margin: 0;
+  padding : 0;
+  box-sizing: border-box;
+  background-image: url("../images/11619750_4791008.jpg");
+  background-size: cover;
+  /* margin: 10px auto; */
+}
+
+
+
+/* Wrapper to handle video aspect ratio */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 95%; /* Wrapper now takes 90% of parent */
+  max-width: 800px; /* Ensure wrapper expands proportionally */
+  margin: 0; /* Center the wrapper */
+}
+
+/* Video player styling */
+.video-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Overlay for custom play button */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 10px;
+}
+
+/* Show overlay on hover */
+.video-wrapper:hover .video-overlay {
+  opacity: 1;
+}
+
+/* Play button styling */
+.play-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 48px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s;
+}
+
+/* Play button hover effect */
+.play-button:hover {
+  transform: scale(1.1);
+}
+
+
+/* AUDIO CSS */
+
+/* General resets */
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Center container and set background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f4ef;
+}
+
+/* Media controls container */
+.media-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+}
+
+/* Media buttons section */
+/* Resets */
+button {
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background-color: #fff6e5; /* Adjusted background */
+  color: #333;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+}
+
+/* Media controls */
+.media-controls {
+  align-items: center;
+  background: #fffdf6;
+  border: 1px solid #fceac3;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Buttons */
+.media-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.media-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-icons {
+  background-color: #fceac3;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 15px;
+  margin-bottom: 5px;
+  transition: all 0.2s;
+}
+
+.media-button:hover .button-icons {
+  background-color: #fdc97c;
+  transform: scale(1.1);
+}
+
+.button-text {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Progress bar */
+.media-progress {
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.progress-bar-wrapper {
+  background-color: #f3e7d8;
+  border-radius: 5px;
+  flex-grow: 1;
+  height: 8px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(to right, #fdb85e, #ff823e);
+  height: 100%;
+  width: 0;
+  transition: width 0.1s linear;
+}
+
+.progress-time-current,
+.progress-time-total {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Image tag css */
+.image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  height: 90%;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.image-frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-preview:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.image-caption {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+
