@@ -53,6 +53,7 @@
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/countdown.css') }}">
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -89,7 +90,10 @@
 		</div>
 	</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(static/images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+
+	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(static/images/180361.jpeg);" data-stellar-background-ratio="0.5">
+		<div id="balloons-container"></div>
+		<audio id="celebration-audio" src="static/images/song.mp3" preload="auto"></audio>
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -99,6 +103,7 @@
 							<h1>Palak Aneja</h1>
 							<h2>A very Happy Birthday to you</h2>
 							<div class="simply-countdown simply-countdown-one"></div>
+							
 							<p><a href="#" class="btn btn-default btn-sm">Let's dive ahead</a></p>
 						</div>
 					</div>
@@ -111,7 +116,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Hello!</h2>
+					<h2>Dice starts rollin!!</h2>
 					<h3>January 1st, 2025, Digital World, India</h3>
 					<p>We invite you to celebrate your some part of the birthday digitally</p>
 				</div>
@@ -122,47 +127,56 @@
 						<img src="static/images/groom.jpg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-groom">
-						<h3>Joefrey Mahusay</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+						<h3>Shrey Aneja</h3>
+						<p>As the self-proclaimed mastermind behind both the plan and this site (don’t ask for evidence, it’s all in my head), I figured I’d show off just enough to make everyone think I know what I’m doing. A very happy birthday to you! Of course, we both know I’m the best—but today, let’s pretend you’re the one with that honor. </p>
 					</div>
 				</div>
-				<p class="heart text-center"><i class="icon-heart2"></i></p>
+				<!-- <p class="heart text-center"><i class="icon-heart2"></i></p> -->
 				<div class="couple-half">
 					<div class="bride">
 						<img src="static/images/bride.jpg" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-bride">
-						<h3>Sheila Mahusay</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+						<h3>Avil Aneja</h3>
+						<p>As the self-declared Stephny behind this entire spectacle, I wish you the happiest of birthdays! Dive deep into the world of the virtual genie and shower some love on our true mastermind (the one who actually did everything). Maybe, just maybe, with enough appreciation, we’ll be able to start monetizing this thing... xD. Here's to more questionable decisions, brilliant ideas, and, of course, your special day! Enjoy!</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(static/images/img_bg_3.jpg);">
+	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(static/images/40d22209-7b78-4277-9f1e-5a029a6501b1.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Our Special Events</span>
+					<span>Our Special</span>
 					<h2>Birthday Events</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="display-t">
 					<div class="display-tc">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="col-md-6 col-sm-6 text-center">
+						<div class="col-md-12 col-md-offset-0">
+							<div class="col-md-4 col-sm-6 text-center">
 								<div class="event-wrap animate-box">
-									<h3>CHAT INTERFACE</h3>
-									<p> An assistant that will guide you to explore your birthday. You can talk whatever you want with this little digital angel. All your surprises are wrapped with this bot and you need to interact with this bot to follow and achieve the shine you truly deserve. PS: Your father's influence will not work here xD. All the best. </p>
+									<h3>Palak's Bday Guide: Your Virtual Genie Awaits</h3>
+									<p> Welcome to your personal birthday assistant, a sassy little digital angel here to sprinkle some sparkle on your day. Chat about anything, unravel surprises, and embark on a journey to the glitz and glam you totally deserve. But heads up—no "Dad card" works here, so roll up your sleeves and own the fun! PS: May the odds be ever in your favor. 😜 </p>
+									<p><a href="{{ url_for('chat') }}" class="btn btn-default btn-sm">Click here</a></p>
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 text-center">
+							<div class="col-md-4 col-sm-6 text-center">
 								<div class="event-wrap animate-box">
-									<h3>Video Display</h3>
-									<p>A compilation of all of your videos which depicts the special place you have in all the hearts. People might say you are the qween of the house but we feel you are a king's stature with the beauty equivalent to qween.</p>
+									<h3>Reel of Glory: Palak's Power-Packed Journey</h3>
+									<p>Lights, camera, Palak! This video is a humble attempt to capture your magic, charm, and the many unforgettable moments we've shared with you. While we all agree you’re a jack of all trades, let's be real—you’re basically the queen of them all. From your wit to your warmth, this reel’s got a pinch of everything we adore about you. 💖</p>
+									<p><a href="{{ url_for('video') }}" class="btn btn-default btn-sm">Click here</a></p>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-6 text-center">
+								<div class="event-wrap animate-box">
+									<h3>Palak's Hall of Fame: Picture-Perfect Edition</h3>
+									<p>Behold, a gallery of memories straight from our phone archives—dust and all. Sure, these snaps are about you (mostly), but honestly, it’s also about us finally getting some credit for our photographer skills. Birthday vibes or not, we deserve a little love. 😎 PS: A QR code for tipping your paparazzi will arrive shortly. Incentives are mandatory, not optional! 😂</p>
+									<p><a href="{{ url_for('gallery') }}" class="btn btn-default btn-sm">Click here</a></p>
 								</div>
 							</div>
 						</div>
@@ -172,110 +186,13 @@
 		</div>
 	</div>
 
-	<!-- <div id="fh5co-gallery" class="fh5co-section-gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Our Memories</span>
-					<h2>Wedding Gallery</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-				</div>
-			</div>
-			<div class="row row-bottom-padded-md">
-				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
-						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-1.jpg); "> 
-						<a href="images/gallery-1.jpg">
-							<div class="case-studies-summary">
-								<span>14 Photos</span>
-								<h2>Two Glas of Juice</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-2.jpg); ">
-						<a href="#" class="color-2">
-							<div class="case-studies-summary">
-								<span>30 Photos</span>
-								<h2>Timer starts now!</h2>
-							</div>
-						</a>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-3.jpg); ">
-						<a href="#" class="color-3">
-							<div class="case-studies-summary">
-								<span>90 Photos</span>
-								<h2>Beautiful sunset</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-4.jpg); ">
-						<a href="#" class="color-4">
-							<div class="case-studies-summary">
-								<span>12 Photos</span>
-								<h2>Company's Conference Room</h2>
-							</div>
-						</a>
-					</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-5.jpg); ">
-							<a href="#" class="color-3">
-								<div class="case-studies-summary">
-									<span>50 Photos</span>
-									<h2>Useful baskets</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-6.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>45 Photos</span>
-									<h2>Skater man in the road</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-7.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<span>35 Photos</span>
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-8.jpg); "> 
-							<a href="#" class="color-5">
-								<div class="case-studies-summary">
-									<span>90 Photos</span>
-									<h2>Timer starts now!</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(static/images/gallery-9.jpg); ">
-							<a href="#" class="color-6">
-								<div class="case-studies-summary">
-									<span>56 Photos</span>
-									<h2>Beautiful sunset</h2>
-								</div>
-							</a>
-						</li>
-					</ul>		
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-
 	<div id="fh5co-testimonial">
 		<div class="container">
 			<div class="row">
 				<div class="row animate-box">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 						<span>Best Wishes</span>
-						<h2>Friends Wishes</h2>
+						<h2>Contributor Wishes</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -287,7 +204,7 @@
 										<figure>
 											<img src="static/images/couple-1.jpg" alt="user">
 										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<span>Simran & Isha Aneja </span>
 										<blockquote>
 											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"</p>
 										</blockquote>
@@ -298,20 +215,9 @@
 										<figure>
 											<img src="static/images/couple-2.jpg" alt="user">
 										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
+										<span>Avil Aneja</span>
 										<blockquote>
 											<p>"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, at the coast of the Semantics, a large language ocean."</p>
-										</blockquote>
-									</div>
-								</div>
-								<div class="item">
-									<div class="testimony-slide active text-center">
-										<figure>
-											<img src="static/images/couple-3.jpg" alt="user">
-										</figure>
-										<span>John Doe, via <a href="#" class="twitter">Twitter</a></span>
-										<blockquote>
-											<p>"Far far away, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."</p>
 										</blockquote>
 									</div>
 								</div>
@@ -322,30 +228,6 @@
 			</div>
 		</div>
 	</div>
-
-
-	<!-- <footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
-					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer> -->
 	</div>
 
 	<div class="gototop js-top">
@@ -377,22 +259,80 @@
 	<script src="static/js/main.js"></script>
 
 	<script>
-    var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+	// Get the current date and time
+	// var d = new Date();
 
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
+	// // Default example
+	// simplyCountdown('.simply-countdown-one', {
+	// 	year: 2025,
+	// 	month: 1,
+	// 	day: 9,
+	// 	hours: 2,
+	// 	minutes: 0,
+	// 	seconds: 0,
+	// 	enableUtc: true,
+	// 	onEnd: function () {
+	// 		// Play celebration audio
+	// 		const audio = document.getElementById('celebration-audio');
+	// 		if (audio) {
+	// 			audio.play();
+	// 		}
 
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
+	// 		// Display balloons
+	// 		displayBalloons();
+	// 	}
+	// });
+
+	// // Function to create and animate balloons
+	// function displayBalloons() {
+	// 	const balloonsContainer = document.getElementById('balloons-container');
+	// 	if (balloonsContainer) {
+	// 		balloonsContainer.style.position = 'relative';
+	// 		balloonsContainer.style.overflow = 'hidden';
+	// 		balloonsContainer.style.height = '100vh';
+	// 		balloonsContainer.style.width = '100vw';
+
+	// 		for (let i = 0; i < 50; i++) {
+	// 			const balloon = document.createElement('div');
+	// 			balloon.classList.add('balloon');
+	// 			balloon.style.left = Math.random() * 100 + '%';
+	// 			balloon.style.animationDuration = Math.random() * 3 + 3 + 's';
+	// 			balloonsContainer.appendChild(balloon);
+	// 		}
+	// 	}
+	// }
+    // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+
+    // // default example
+    // simplyCountdown('.simply-countdown-one', {
+    //     year: d.getFullYear(),
+    //     month: d.getMonth() + 1,
+    //     day: d.getDate()
+    // });
+
+    // //jQuery example
+    // $('#simply-countdown-losange').simplyCountdown({
+    //     year: d.getFullYear(),
+    //     month: d.getMonth() + 1,
+    //     day: d.getDate(),
+    //     enableUtc: false
+    // });
+	 // Define the target date and time for 10th January 2025, 12:00 AM IST
+	//  var targetDateIST = new Date('2025-01-10T00:00:00+05:30'); // IST offset is +05:30
+
+	// Default example for the countdown
+	// simplyCountdown('.simply-countdown-one', {
+	// 	year: targetDateIST.getFullYear(),
+	// 	month: targetDateIST.getMonth() + 1, // getMonth is 0-based
+	// 	day: targetDateIST.getDate(),
+	// 	hours: targetDateIST.getHours(),
+	// 	minutes: targetDateIST.getMinutes(),
+	// 	seconds: targetDateIST.getSeconds(),
+	// 	enableUtc: false, // Ensure local time is used
+	// 	onEnd: function () {
+	// 		alert('The countdown has ended!');
+	// 	}
+	// });
 </script>
 
 	</body>

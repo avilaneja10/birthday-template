@@ -357,6 +357,10 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-event {
   height: 850px;
   float: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 100;
+
 }
 #fh5co-counter .display-t,
 #fh5co-counter .display-tc,

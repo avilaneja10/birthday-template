@@ -12,7 +12,6 @@
 /*global window, document*/
 (function (exports) {
     'use strict';
-
     var // functions
         extend,
         createElements,
@@ -115,9 +114,9 @@
      */
     simplyCountdown = function (elt, args) {
         var parameters = extend({
-                year: 2015,
-                month: 6,
-                day: 28,
+                year: 2025,
+                month: 1,
+                day: 10,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -282,4 +281,89 @@ if (window.jQuery) {
             return simplyCountdownify(this.selector, options);
         };
     }(jQuery, simplyCountdown));
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const targetDate = new Date('January 10, 2025 00:00:00').getTime();
+
+    simplyCountdown('.simply-countdown-one', {
+        year: 2025,
+        month: 1,
+        day: 10,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        enableUtc: false,
+        onEnd: function () {
+            playCelebration();
+        }
+    });
+    // User interaction for audio permission
+    document.addEventListener('click', enableAudioPlayback, { once: true });
+});
+
+let audioEnabled = false;
+
+function enableAudioPlayback() {
+    const audio = document.getElementById('celebration-audio');
+    audio.play().then(() => {
+        audio.pause(); // Preload and prepare the audio
+        audioEnabled = true;
+    }).catch(err => {
+        console.error("Audio playback failed:", err);
+    });
+}
+
+
+function playCelebration() {
+    const audio = document.getElementById('celebration-audio');
+    if (audioEnabled) {
+        audio.play().catch(err => console.error("Failed to play audio:", err));
+    }
+
+    createBalloons(40);
+
+    setTimeout(() => {
+        removeBalloons();
+    }, 20000);
+}
+
+const balloonContainer = document.getElementById('balloons-container');
+
+function random(num) {
+    return Math.floor(Math.random() * num);
+}
+
+function getRandomStyles() {
+    const r = random(255);
+    const g = random(255);
+    const b = random(255);
+    const leftPosition = random(window.innerWidth); // Randomize left position
+    const dur = random(5) + 5;
+
+    return `
+        background-color: rgba(${r},${g},${b},0.7);
+        color: rgba(${r},${g},${b},0.7);
+        box-shadow: inset -7px -3px 10px rgba(${r - 10},${g - 10},${b - 10},0.7);
+        left: ${leftPosition}px;
+        animation: float ${dur}s ease-in infinite;
+    `;
+}
+
+function createBalloons(num) {
+    for (let i = 0; i < num; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.cssText = getRandomStyles();
+        balloonContainer.appendChild(balloon);
+    }
+}
+
+function removeBalloons() {
+    balloonContainer.style.opacity = 0;
+    setTimeout(() => {
+        balloonContainer.innerHTML = ''; // Clear balloons
+        balloonContainer.style.opacity = 1; // Reset for next use
+    }, 500);
 }
