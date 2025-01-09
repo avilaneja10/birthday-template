@@ -291,8 +291,8 @@ document.addEventListener('DOMContentLoaded', function () {
         year: 2025,
         month: 1,
         day: 10,
-        hours: 0,
-        minutes: 0,
+        hours: 19,
+        minutes: 44,
         seconds: 0,
         enableUtc: false,
         onEnd: function () {
