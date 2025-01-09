@@ -14,7 +14,7 @@ MODEL_NAME = "Qwen/Qwen2.5-72B-Instruct-Turbo"
 with open('system_prompt.txt', 'r') as file:
     SYSTEM_PROMPT = file.read()
 
-# app.conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
+conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
 
 # print(app.conversation_history)
 
