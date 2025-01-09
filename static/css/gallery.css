@@ -17,6 +17,8 @@
   --------------------------------------*/
   .portfolio-section {
     padding: 50px 0;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     background-color: #000;
   }
   .portfolio-section h2 {
@@ -148,7 +150,13 @@
     line-height: 40px;
     cursor: pointer;
   }
-  
+  .mix img {
+    width: 100%; /* Ensure the image takes the full width of its container */
+    height: 225px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures the image fills the container while maintaining aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
   /*******Responsive media query******/
   
   /* Extra small devices (portrait phones, less than 576px)*/
