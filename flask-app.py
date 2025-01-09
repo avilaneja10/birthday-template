@@ -91,7 +91,7 @@ def chat_api():
             file_metadata = ""
             
         # print(assistant_message)
-        # print(file_metadata)/
+        print(file_metadata)
         # Add the assistant's response to the conversation
         conversation_history.append({"role": "assistant", "content": llm_output})
         app.conversation_history = conversation_history

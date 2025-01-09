@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const { type, path } = metadata;
   
       switch (type) {
-        case "text":
+        case "txt":
           try {
             const response = await fetch(path);
             if (!response.ok) throw new Error("Unable to fetch the text file");
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           break;
   
-        case "video":
+        case "mp4":
           fileResponseContainer.innerHTML = `
           <div class="background-container">
           <div class="video-container">
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>`
         break;
   
-        case "audio":
+        case "mp3":
           fileResponseContainer.innerHTML = `
                     <div class="media-controls">
                       <div class="media-buttons">
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                   break;
   
-        case "image":
+        case "jpeg":
           fileResponseContainer.innerHTML = `
             <div class="image-card">
             <div class="image-frame">
