@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, Response, send_from_directory
 from openai import OpenAI
+from flask import session
 import os
 import json
 
@@ -8,13 +9,15 @@ client = OpenAI(
     api_key=os.getenv('TOGETHER_API_KEY', None),
     base_url='https://api.together.xyz/v1',
 )
+app.secret_key = '1001'
+
 
 MODEL_NAME = "Qwen/Qwen2.5-72B-Instruct-Turbo"
 
 with open('system_prompt.txt', 'r') as file:
     SYSTEM_PROMPT = file.read()
 
-conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
+# conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
 
 # print(app.conversation_history)
 
@@ -26,8 +29,9 @@ def index():
 @app.route('/chat')
 def chat():
     print("Setting the conversation history to default")
-    global conversation_history
-    conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
+    # global conversation_history
+    # conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
+    app.conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
     return render_template('chat.html')
 
 @app.route('/video')
@@ -38,35 +42,11 @@ def video():
 def gallery():
     return render_template('gallery.html')
 
-# @app.route('/chat_api', methods=['GET'])
-# def chat_api():
-#     user_message = request.args.get("message")
-#     if not user_message:
-#         return jsonify({"error": "No message provided"}), 400
-    
-#     conversation_history = [{"role": "system", "content": "Some system message"}]
-#     conversation_history.append({"role": "user", "content": user_message})
-    
-#     def generate_stream():
-#         try:
-#             response = client.chat.completions.create(
-#                 model=MODEL_NAME,
-#                 messages=conversation_history,
-#                 stream=True
-#             )
-#             for chunk in response:
-#                 # Make sure we are properly formatting the response
-#                 content = chunk.choices[0].delta.content
-#                 yield f"data: {content}\n\n"  # Ensure the correct SSE format
-#         except Exception as e:
-#             print(f"Error during streaming: {e}")
-#             # yield f"data: [ERROR] {str(e)}\n\n"
-
-#     return Response(generate_stream(), content_type='text/event-stream')
 
 
 @app.route('/chat_api', methods=['POST'])
 def chat_api():
+    conversation_history = app.conversation_history
     ### PRINT CONVERSATION HISTORY
     print("#"*30)
     for conversation in conversation_history:
@@ -114,6 +94,7 @@ def chat_api():
         # print(file_metadata)/
         # Add the assistant's response to the conversation
         conversation_history.append({"role": "assistant", "content": llm_output})
+        app.conversation_history = conversation_history
         return jsonify({"assistant_message": assistant_message, "file_metadata": file_metadata})
         # return jsonify({"assistant_message" : "SEE YOUR RIGHT" , "file_metadata" : {"type" : "text" , "path" : "static/wishes/wish1.txt"}})
     except Exception as e:
