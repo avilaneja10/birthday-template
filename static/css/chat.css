@@ -94,6 +94,7 @@ body {
     border-radius: 1rem;
     font-size: 1.4rem;
     line-height: 1.4;
+    white-space: pre-wrap;
   }
 
   
