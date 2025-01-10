@@ -22,13 +22,14 @@ Brainteaser7 : TarunAndAvneet.txt
 Brainteaser8 : Prerna.mp4
 Brainteaser9 : PriyankaDidi.txt
 Brainteaser10 : RevanshAndFamily.mp4
-Brainteaser11 : Dadi.mp4
+Brainteaser11 : Aalam.mp4
+Brainteaser12 : Dadi.mp4
 
 ####### Brainteasers related to gift
-Brainteaser12 : Almirah (Location)
-Brainteaser13 : Prayer Room (Location)
-Brainteaser14 : Drawer which contains money (Location)
-Brainteaser15 : Palak's Dressing area (Location)
+Brainteaser13 : Almirah (Location)
+Brainteaser14 : Prayer Room (Location)
+Brainteaser15 : Drawer which contains money (Location)
+Brainteaser16 : Palak's Dressing area (Location)
 
 ######## Task Explanation:
 You need to follow the following process mentioned to take her to the final gift ride. 
@@ -41,8 +42,8 @@ You need to follow the following process mentioned to take her to the final gift
 
 ######## How to generate brainteaser?
 Follow the below mentioned guidelines to generate the brainteasers : 
-- Out of the 11 wishes brainteasers, 
-    - 7 brainteasers should be strictly generic. Out of these 7, 4 should be of VERY hard level and 3 should be medium.
+- Out of the 12 wishes brainteasers, 
+    - 8 brainteasers should be strictly generic. Out of these 7, 4 should be of VERY hard level and 4 should be medium.
     - Rest 4 brainteasers should have a personal touch based on the PERSONAL INFORMATION mentioned above. These 4 should have 2 medium level and 2 VERY hard level. 
     - Only use the information present in the "PERSONAL INFORMATION" section provided above to generate the brainteasers. DO NOT HALLUCINATE OR USE filenames for generating brainteasers.
     - YOU SHOULD NOT DIRECTLY ASK THE NAME OF THE PERSON OR BRAINTEASER WHOSE ANSWER IS THE PERSON NAME. DO NO HALLUCINATE ANY INFORMATION.
@@ -51,7 +52,7 @@ Follow the below mentioned guidelines to generate the brainteasers :
     - Puzzles // Puzzle is a problem whcih requires logical reasoning or pattern recognition to solve.
     - Cryptic Word Search // Puzzle where words are hidden in a grid of letters, arranged in rows and columns. Players identify words based on provided clues
     - Riddles //A riddle is a type of puzzle expressed in the form of a question or statement, often with a double meaning or clever wordplay.
-- Out of the 15 brainteasers, 8 should be riddles, 4 should be puzzles and the rest should be 3 Cryptic Word Search.
+- Out of the 16 brainteasers STRICTLY, 8 should be riddles, 4 should be puzzles and the rest should be 4 Cryptic Word Search.
 
 ######## Examples of brainteasers for your reference
 1. 
@@ -68,10 +69,10 @@ Follow the below mentioned guidelines to generate the brainteasers :
 {
     "brainteaser_num" : "...",
     "file_name" : "...",
-    "content" : "Clue: A vehicle with four wheels , Grid :  C A R P
-                                                            A O V E
-                                                            L R K C
-                                                            O B P A"
+    "content" : "Clue: A vehicle with four wheels , Grid :  C H R P R A M O
+                                                            A O V E U I L V
+                                                            L R K C A R M N
+                                                            O B P A B N J K"
     "correct_answer" : "CAR",
     "last_given_answer" : "...", 
     "is_answer_correct" : "..."
