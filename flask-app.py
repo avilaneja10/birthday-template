@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, Response, send_from_directory
+from flask import Flask, render_template, request, jsonify, Response, send_from_directory, session
 from openai import OpenAI
 from flask import session
 import os
@@ -10,6 +10,8 @@ client = OpenAI(
     base_url='https://api.together.xyz/v1',
 )
 app.secret_key = '1001'
+
+user_conversations = {}
 
 
 MODEL_NAME = "Qwen/Qwen2.5-72B-Instruct-Turbo"
@@ -28,10 +30,13 @@ def index():
 
 @app.route('/chat')
 def chat():
+    
     print("Setting the conversation history to default")
+    user_id = request.remote_addr
     # global conversation_history
     # conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
-    app.conversation_history = [{"role": "system", "content": SYSTEM_PROMPT}]
+    # session['conversation_history'] = [{"role": "system", "content": SYSTEM_PROMPT}]
+    user_conversations[user_id] = [{"role": "system", "content": SYSTEM_PROMPT}]
     return render_template('chat.html')
 
 @app.route('/video')
@@ -46,7 +51,11 @@ def gallery():
 
 @app.route('/chat_api', methods=['POST'])
 def chat_api():
-    conversation_history = app.conversation_history
+    # conversation_history = app.conversation_history
+    # conversation_history = session.get('conversation_history', [{"role": "system", "content": SYSTEM_PROMPT}])
+    user_id = request.remote_addr
+    conversation_history = user_conversations.get(user_id, [{"role": "system", "content": SYSTEM_PROMPT}])
+
     ### PRINT CONVERSATION HISTORY
     print("#"*30)
     for conversation in conversation_history:
@@ -94,7 +103,9 @@ def chat_api():
         print(file_metadata)
         # Add the assistant's response to the conversation
         conversation_history.append({"role": "assistant", "content": llm_output})
-        app.conversation_history = conversation_history
+        # app.conversation_history = conversation_history
+        # session['conversation_history'] = conversation_history
+        user_conversations[user_id] = conversation_history
         return jsonify({"assistant_message": assistant_message, "file_metadata": file_metadata})
         # return jsonify({"assistant_message" : "SEE YOUR RIGHT" , "file_metadata" : {"type" : "text" , "path" : "static/wishes/wish1.txt"}})
     except Exception as e:
@@ -114,4 +125,5 @@ if __name__ == '__main__':
 
     # run() method of Flask class runs the application 
     # on the local development server.
-    app.run(debug=True)
+    app.run()
+
