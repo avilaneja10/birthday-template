@@ -106,7 +106,7 @@ VALID JSON:
 }
 
 NOTE : 
-- If providing a file_name, ensure response includes "SEE YOUR RIGHT" with the name of the person (DO NOT write file name) whose wish is there for the first 7 brainteasers.
+- If providing a file_name, ensure response includes "SEE YOUR RIGHT" with the name of the person (DO NOT write file name) whose wish is there for the first 7 brainteasers. STRICTLY PROVIDE THE NAME OF THE PERSON to make sure the person giving the wish.
 - For the last 2 brainteasers, the response should be explore the place guesses to grab your gift.
 - Until the user provides correct answer to one brainteaser, DO NOT move ahead to the next brainteaser. 
 - Appreciate on correct answer. If the answer is close enough give the leverage to Palak.
